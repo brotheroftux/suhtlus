@@ -12,5 +12,5 @@ class mod_database
     public $dbReference;
     public function db_init(){
         if(constant("DB_TYPE") == mysql){
-            $dbReference = new mysqli(DB_HOST, DB_USER, DB_PASSWORD
+            $dbReference = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 }

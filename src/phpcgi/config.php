@@ -10,6 +10,7 @@ define("DB_USER",           "user");  // database server user
 define("DB_PASS",        "pass123");  // database server password
 define("DB_SEPARATE_TABLES",  true);  // use separate tables for every board?
 define("DB_TABLE_PREFIX", "board_");  // database table prefix
+define("DB_NAME",        "suhtlus");
 
 // misc settings
 define("REQUESTS_PER_SECOND",   10);
