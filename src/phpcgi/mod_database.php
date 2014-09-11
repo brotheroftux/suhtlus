@@ -1,6 +1,6 @@
 <?
 // mod_database.php
-// database module for <name>board
+// database module for suhtlus
 // copyright brotheroftux 2014
 // this code is distributed under GPLv3 license
 
@@ -13,4 +13,6 @@ class mod_database
     public function db_init(){
         if(constant("DB_TYPE") == mysql){
             $dbReference = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+            return $dbReference;
+        }
 }
