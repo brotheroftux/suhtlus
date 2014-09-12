@@ -5,17 +5,9 @@
 // this code is distributed under GPLv3 license
 
 require_once("config.php");
+require_once("mod_database.php");
 
-$responseArray = array();
-$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-if ($mysqli->connect_errno) {
-    die("Could not connect to MySQL.\n"); // TODO: encode error messages in JSON
-}
-
-$mysqli->query("set names 'utf8';");
-$mysqli->query("set character set 'utf8';");
-$res = $mysqli->query("select * from ".DB_TABLE_PREFIX.$_GET['board']." limit ".$_GET['offset'].", ".$_GET['count'].";");
-echo json_encode($res);
-mysqli->close();
+$dbInstance = mod_database::getInstance(); // mod_database is a singleton pattern class
+echo $dbInstance->query("select * from ".DB_TABLE_PREFIX.$_GET['board']." limit ".$_GET['offset'].", ".$_GET['count'].";");
 
 ?>
