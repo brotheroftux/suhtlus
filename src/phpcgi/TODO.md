@@ -5,3 +5,4 @@
 * Encode error messages in JSON
 * Administration panel
 * Some more modules (e.g. Yandex.Captcha)
+* Luminance transition value tests
