@@ -16,5 +16,10 @@
     $colors['green'] = ($rgb >> 8) & 0xFF;
     $blue['blue']  =  $rgb & 0xFF;
     $luminance = (0.2126*$colors['red'] + 0.7152*$colors['green'] + 0.0722*$colors['blue']); // luminance formula, God bless wikipedia
-    echo $luminance; // now only for test
+    // echo $luminance; // now only for test
+    if ($luminance <= 55){
+        echo json_encode(array( "response" => "dark" ));
+    }else{
+        echo json_encode(array( "response" => "light" ));
+    }
 ?>
