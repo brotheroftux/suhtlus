@@ -7,7 +7,7 @@
 require_once("config.php");
 
 $responseArray = array();
-$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 if ($mysqli->connect_errno) {
     die("Could not connect to MySQL.\n"); // TODO: encode error messages in JSON
 }
