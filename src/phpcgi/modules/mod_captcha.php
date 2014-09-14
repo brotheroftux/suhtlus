@@ -5,6 +5,8 @@
 // copyright brotheroftux 2014
 // this code is distributed under GPLv3 license
 
+require_once("mod_captcha.conf.php");
+
 class mod_captcha
 {
     private $isYandexCaptcha;
@@ -37,8 +39,9 @@ class mod_captcha
             curl_setopt($curl, CURLOPT_URL, $url_api."get-captcha?key=".$api_key);
             $response = new SimpleXMLElement(curl_exec($curl));
             return array( "captcha" => $response->captcha, "img-url" => $response->url );
-        }
-        // TODO: add built-in captcha implementation
+        }else{
+            $bytes = openssl_random_pseudo_bytes(5);
+            $hex   = bin2hex($bytes);
     }
 
     public function checkCaptcha($id, $value){
