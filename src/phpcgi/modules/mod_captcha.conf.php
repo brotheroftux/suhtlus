@@ -10,7 +10,7 @@ define("CAPTCHA_VALID_IDS_FILE", "filename"); // filename where mod_captcha will
 define("CAPTCHA_PIC_SETS", serialize(array(
     "anime" => array(
         "count" => 3, "keys" => array(
-            "kurisu", "kagami", "cirno"
+            "Makise Kurisu", "Kagami Hiiragi", "Cirno"
         )
     )
 )));
