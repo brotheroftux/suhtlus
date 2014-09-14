@@ -10,7 +10,7 @@ require_once("../config.php");
 class mod_database
 {
     protected static $_instance;
-    private $mysqli;
+    private $mysqli; // mysqli object
     
     private function __construct(){
         if (DB_TYPE == "mysql"){
