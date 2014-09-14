@@ -4,8 +4,12 @@
 // copyright 2014 brotheroftux
 // this code is distributed under GPLv3 license
 
-    $filename = $_GET['filename']; 
-    $image = imagecreatefrompng($filename);
+    $filename = $_GET['filename'];
+    if (preg_match("/(\.jpe*g)$/i", $filename) != 0){
+        $image = imagecreatefromjpeg($filename);
+    }elseif (preg_match("/(\.png)$/i", $filename) != 0){
+        $image = imagecreatefrompng($filename);
+    }
     $width = imagesx($image);
     $height = imagesy($image);
     $pixel = imagecreatetruecolor(1, 1);
